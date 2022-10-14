@@ -80,7 +80,7 @@ namespace Tictactoe {
             {
                 return true;
             }
-            //Unentschieden Prüfer
+            //Unentschieden 
             else if (playField[1] != '1' && playField[2] != '2' && playField[3] != '3' && playField[4] != '4' && playField[5] != '5' && playField[6] != '6' && playField[7] != '7' && playField[8] != '8' && playField[9] != '9')
             {
                 return false;
