@@ -12,7 +12,7 @@ namespace Tictactoe {
         static bool playing = true;
         static bool flag = false, correntInput = false;
 
-        static void Main(string[] args) //Main Methode
+        public static void Main(string[] args) //Main Methode
         {
             Console.WriteLine("Wie heißt Spieler-1?");
             player1 = Console.ReadLine();
@@ -35,11 +35,11 @@ namespace Tictactoe {
         public static void Field() //Spielfeld Methode
         {
             Console.Clear();
-            Console.WriteLine("     |     |      "); 
             Console.WriteLine("  {0}  |  {1}  |  {2}", playField[1], playField[2], playField[3]);
+            Console.WriteLine("-------------------");
             Console.WriteLine("  {0}  |  {1}  |  {2}", playField[4], playField[5], playField[6]);
-            Console.WriteLine("  {0}  |  {1}  |  {2}", playField[7], playField[8], playField[9]); 
-            Console.WriteLine("     |     |      ");
+            Console.WriteLine("-------------------");
+            Console.WriteLine("  {0}  |  {1}  |  {2}", playField[7], playField[8], playField[9]);
             repeat++;
         }
 
