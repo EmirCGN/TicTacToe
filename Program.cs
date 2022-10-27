@@ -43,7 +43,7 @@ namespace Tictactoe {
             repeat++;
         }
 
-        public static bool CheckWin() //Win Prüfer Methode
+        public static bool CheckWin()
         {
             //Horizontal 
             if (playField[1] == playField[2] && playField[2] == playField[3]) //(Erste Reihe)
@@ -85,6 +85,7 @@ namespace Tictactoe {
             {
                 return false;
             }
+            return false;
         }
     }
 }
