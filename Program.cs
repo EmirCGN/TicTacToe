@@ -10,7 +10,7 @@ namespace Tictactoe {
         static string player1 = "";
         static string player2 = "";
         static int score1 = 0, score2 = 0;
-        static char[] playField = { '1', '2', '3', '4', '5', '6', '7', '8', '9' };
+        static string[] playField = new string[9] {"1", "2", "3", "4", "5", "6", "7", "8", "9"};
         static int repeat = 0;
         static int choice;
         static int turn = 1;
@@ -131,7 +131,7 @@ namespace Tictactoe {
                 return true;
             }
             //Unentschieden 
-            else if (playField[1] != '1' && playField[2] != '2' && playField[3] != '3' && playField[4] != '4' && playField[5] != '5' && playField[6] != '6' && playField[7] != '7' && playField[8] != '8' && playField[9] != '9')
+            else if (playField[1] != "1" && playField[2] != "2" && playField[3] != "3" && playField[4] != "4" && playField[5] != "5" && playField[6] != "6" && playField[7] != "7" && playField[8] != "8" && playField[9] != "9")
             {
                 return false;
             }
