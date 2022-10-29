@@ -10,7 +10,7 @@ namespace Tictactoe {
         static string player1 = "";
         static string player2 = "";
         static int score1 = 0, score2 = 0;
-        static string[] playField = new string[9] {"1", "2", "3", "4", "5", "6", "7", "8", "9"};
+        static string[] playField = new string[10] {"0", "1", "2", "3", "4", "5", "6", "7", "8", "9"};
         static int repeat = 0;
         static int choice;
         static int turn = 1;
@@ -28,7 +28,7 @@ namespace Tictactoe {
             Console.ReadLine();
             Console.Clear();
 
-            while(playing == true)
+            while(playing == false)
             {
                 while(flag = false) // Game-Loop
                 {
@@ -48,7 +48,7 @@ namespace Tictactoe {
                     {
                         Console.WriteLine("Bitte wählen Sie ein Feld aus!");
                         choice = int.Parse(Console.ReadLine());
-                        if (choice > 0 && choice < 9)
+                        if (choice > 0 && choice < 10)
                         {
                             correntInput = true;
                         }
@@ -66,13 +66,52 @@ namespace Tictactoe {
                         {
                             Console.WriteLine("Dieser Feld ist bereits besetzt!");
                             Console.ReadLine();
-                            Console.Clear();
-                            continue;
+                            Console.Clear(); //Konsole wird einmal sauber gemacht
+                            continue; //Beendet die Iteration und lässt direkt den nächsten beginnen
                         }
                         else
                         {
-
+                            playField[choice] = "O";
                         }
+                        if (turn == 2)
+                        {
+                            if(playField[choice] == "O") //Überprüft ob das Feld besetzt ist
+                            {
+                                Console.WriteLine("Dieser Feld ist bereits besetzt!");
+                                Console.ReadLine();
+                                Console.Clear();
+                                continue;
+                            }
+                            else
+                            {
+                                playField[choice] = "X";
+                            }
+                        }
+                        flag = CheckWin();
+
+                        if(flag == false)
+                        {
+                            if(turn == 1)
+                            {
+                                turn = 2;
+                            }else if(turn == 2)
+                            {
+                                turn = 1;
+                            }
+                            Console.Clear();
+                        }
+                    }
+                    Console.Clear();
+                    Field();
+
+                    for(int i = 1; i < 10; i++)
+                    {
+                        playField[i] = i.ToString();
+                    }
+
+                    if(flag == false)
+                    {
+
                     }
                 }
             }
@@ -91,6 +130,14 @@ namespace Tictactoe {
             Console.WriteLine("  {0}  |  {1}  |  {2}", playField[7], playField[8], playField[9]);
             Console.WriteLine("     |     |      ");
             repeat++;
+
+            //   |   |
+            // 1 | 2 | 3
+            //---+---+---
+            // 4 | 5 | 6
+            //---+---+---
+            // 7 | 8 | 9
+            //   |   |
         }
 
         public static bool CheckWin()
@@ -135,7 +182,7 @@ namespace Tictactoe {
             {
                 return false;
             }
-            return false;
+            return true;
 
         }
     }
