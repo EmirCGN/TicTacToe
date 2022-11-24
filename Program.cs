@@ -19,6 +19,9 @@ namespace Tictactoe {
 
         public static void Main(string[] args) //Main Methode
         {
+            Console.WriteLine("  _______ _   _______      _______         \r\n |__   __(_) |__   __|    |__   __|        \r\n    | |   _  ___| | __ _  ___| | ___   ___ \r\n    | |  | |/ __| |/ _` |/ __| |/ _ \\ / _ \\\r\n    | |  | | (__| | (_| | (__| | (_) |  __/\r\n    |_|  |_|\\___|_|\\__,_|\\___|_|\\___/ \\___|\r\n                                           \r\n                                           ");
+            Thread.Sleep(2000);
+            Console.Clear();
             Console.WriteLine("Wie heißt Spieler-1?");
             player1 = Console.ReadLine();
             Console.WriteLine("Wie heißt Spieler-2?");
